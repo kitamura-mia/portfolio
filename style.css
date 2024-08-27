@@ -147,7 +147,7 @@ body {
 }
 
 .plofile-section {
-  width: 50%;
+  width: 48%;
 }
 
 .plofile-section h2.title {
@@ -190,6 +190,17 @@ body {
   height: 100%;
 }
 
+.hobby_contents_text {
+  font-size: 15px;
+  text-align: center;
+}
+
+.hobby_contents_text h2 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
 h1 {
   font-size: 28px;
   text-align: center;
@@ -203,7 +214,7 @@ h1 {
 }
 
 .contents_box h2.title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 100px;
@@ -239,16 +250,24 @@ h1 {
 }
 
 #contact {
-  width: 67%;
+  width: 100%;
   display: flex;
   margin: 150px auto;
 }
 
 .contact-h2 {
   font-size: 24px;
-  margin-right: 40%;
+  margin-right: 20%;
   margin-left: 8%;
   font-weight: bold;
+}
+
+.contact-text {
+  margin-right: 20px;
+}
+
+#contact .line_qr {
+  width: 200px;
 }
 
 .footer {
@@ -261,6 +280,7 @@ h1 {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 70px;
   justify-content: space-between;
 }
 
@@ -376,6 +396,16 @@ h1 {
     margin: 0 auto 50px;
     text-align: center;
   }
+
+  #contact .contact-text {
+    width: 50%;
+    margin: 0 auto 20px;
+    word-break: break-all;
+  }
+  #contact .line_qr {
+    width: 150px;
+    margin: 0 auto;
+  }
 } /**メディアクエリ800px**/
 
 /***************メディアクエリ500px************/
@@ -424,6 +454,15 @@ h1 {
   .nav_flex a:hover {
     color: #ab916a;
     background-color: #fff;
+  }
+
+  .FirstView_container .flex {
+    display: block;
+  }
+
+  .FirstView_container .main-img {
+    width: 200px;
+    margin: 50px auto;
   }
 
   .hobby .hobby_contents {
@@ -521,8 +560,6 @@ h1 {
     display: block;
     width: 40px;
     height: 40px;
-    background: #777;
-    border-radius: 5px;
     position: fixed;
     top: 20px;
     right: 10px;
@@ -531,25 +568,24 @@ h1 {
 
   .btn_menu span {
     width: 60%;
-    height: 4px;
+    height: 2px;
     display: block;
-    background-color: #fff;
-    border-radius: 5px;
+    background-color: #000;
     position: absolute;
     left: 20%;
-    transition: all 0.2s linear; /*transition .2sでも可*/
+    transition: all 0.2s linear;
   }
 
   .btn_menu span:nth-of-type(1) {
-    top: 10px;
+    top: 8.5px;
     transform: rotate(0);
   }
   .btn_menu span:nth-of-type(2) {
-    top: 18px;
+    top: 19px;
     transform: scale(1);
   }
   .btn_menu span:nth-of-type(3) {
-    bottom: 10px;
+    bottom: 8.5px;
     transform: rotate(0);
   }
 
@@ -590,6 +626,19 @@ h1 {
     display: block;
   }
 
+  .header #gnav li a {
+    padding: 10px;
+  }
+
+  .header #gnav li:last-child a {
+    padding-right: 20px;
+    padding: 10px;
+  }
+
+  .header #gnav li a:hover {
+    text-decoration: none;
+  }
+
   .nav_flex li {
     width: 100%;
     border: none;
@@ -597,9 +646,5 @@ h1 {
 
   .nav_flex a {
     padding: 20px;
-  }
-
-  .nav_flex a:hover {
-    border-bottom: 3px dashed;
   }
 } /**メディアクエリ500px**/
