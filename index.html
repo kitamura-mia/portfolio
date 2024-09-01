@@ -18,8 +18,32 @@
       defer
     ></script>
     <script src="js/page.js" defer></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+      defer
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"
+      integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
+    <div class="cursor"></div>
+    <div class="circles">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+    </div>
+    <div class="content">
+      <h1>Welcom My Portoforio</h1>
+    </div>
     <header class="header">
       <div class="header_container">
         <div class="header_logo">
@@ -34,10 +58,10 @@
         <div id="gnav">
           <nav>
             <ul class="nav_flex">
-              <li><a href="#">home</a></li>
-              <li><a href="#">plofile</a></li>
-              <li><a href="#">works</a></li>
-              <li><a href="#">contact</a></li>
+              <li><a href="index.html">home</a></li>
+              <li><a href="#plofile-container">plofile</a></li>
+              <li><a href="#works">works</a></li>
+              <li><a href="#contact">contact</a></li>
             </ul>
           </nav>
         </div>
@@ -56,7 +80,7 @@
         </div>
         <div class="scroll">SCROLL</div>
       </div>
-      <div class="plofile-container">
+      <div id="plofile-container">
         <div class="plofile-img">
           <img src="images/plofole_img.jpg" alt="自分の顔写真" />
         </div>
@@ -64,7 +88,7 @@
           <h2 class="title">【profile】</h2>
           <p class="name">北村実愛</p>
           <p class="plofile-text">
-            大阪府出身。現在は兵庫県在住。<br />栄養士養成学校卒業後、約4年間ドラッグストアで美容部員として勤務。2023年秋頃からオンラインスクールにてWEB制作の学習を開始しました。現在は職業訓練校に通い、日々スキルアップに励んでいます。シンプルで分かりやすいデザインが得意です。
+            大阪府出身。現在は兵庫県在住。<br />栄養士養成学校卒業後、約4年間ドラッグストアで美容部員として勤務。2023年秋頃からオンラインスクールにてWEB制作の学習を開始しました。現在は職業訓練校に通い、日々スキルアップに励んでいます。シンプルで分かりやすいデザインを得意としています。
           </p>
           <h2 class="title">【主なスキル】</h2>
           <p class="skill-text">
@@ -112,14 +136,24 @@
               <div class="works-container">
                 <div class="contents">
                   <div class="contents_pic">
-                    <a href="http://kitamuramia.starfree.jp/">
+                    <a href="http://kitamuramia.starfree.jp/" target="”_blank”">
                       <img
-                        src="images/cafe periwincle.png"
-                        alt="架空カフェ「ペリウィンクル」の画像"
+                        src="images/cafe_mokkuup.png"
+                        alt="架空カフェ「ペリウィンクル」の画像
+                        "
+                        width="300px"
                     /></a>
+                    <div class="button_line001">
+                      <a
+                        href="http://kitamuramia.starfree.jp/"
+                        target="”_blank”"
+                        >サイトを見る</a
+                      >
+                    </div>
                   </div>
                   <p class="contents_text">
-                    Cafe Periwinkle ❘ 架空カフェHP(コーディング・デザイン共に制作)<br />
+                    Cafe Periwinkle ❘
+                    架空カフェHP(デザイン・コーディング共に制作)<br />
                     目的：来店促進<br />
                     コンセプト：雑貨屋さんやカフェが立ち並ぶ通りの、2Fにあるこじんまりしたカフェ。
                     ゆったり落ち着いた空間で癒やしのひととき過ごせることが伝わるように余白感たっぷりで作成しました。
@@ -127,10 +161,11 @@
                 </div>
                 <div class="contents">
                   <div class="contents_pic">
-                    <img
-                      src="images/beergarden_flyer.png"
-                      alt="神戸クラフトビアガーデンのフライヤー作品画像"
-                    />
+                    <a href="images/beergarden_flyer.png" data-lightbox="group"
+                      ><img
+                        src="images/beergarden_flyer.png"
+                        alt="神戸クラフトビアガーデンのフライヤー作品画像"
+                    /></a>
                   </div>
                   <p class="contents_text">
                     神戸クラフトビアガーデン ❘ フライヤー<br />
@@ -142,10 +177,11 @@
                 </div>
                 <div class="contents">
                   <div class="contents_pic">
-                    <img
-                      src="images/gym_shopcard.png"
-                      alt="パーソナルジム「MAKE BODY UP」のショップカード作品画像"
-                    />
+                    <a href="images/gym_shopcard.png" data-lightbox="group"
+                      ><img
+                        src="images/gym_shopcard.png"
+                        alt="パーソナルジム「MAKE BODY UP」のショップカード作品画像"
+                    /></a>
                   </div>
                   <p class="contents_text">
                     パーソナルジム「MAKE BODY UP」 ❘ ショップカード<br />
@@ -156,10 +192,11 @@
                 </div>
                 <div class="contents">
                   <div class="contents_pic">
-                    <img
-                      src="images/haircare_banner.png"
-                      alt="ヘアケア商品通販Alonnisosのバナー作品画像"
-                    />
+                    <a href="images/haircare_banner.png" data-lightbox="group"
+                      ><img
+                        src="images/haircare_banner.png"
+                        alt="ヘアケア商品通販Alonnisosのバナー作品画像"
+                    /></a>
                   </div>
                   <p class="contents_text">
                     ヘアケア商品通販Alonnisos ❘ バナー<br />
@@ -173,10 +210,13 @@
                 </div>
                 <div class="contents">
                   <div class="contents_pic">
-                    <img
-                      src="images/furniturestore_banner.png"
-                      alt="家具販売会社 Finleyのバナー作品画像"
-                    />
+                    <a
+                      href="images/furniturestore_banner.png"
+                      data-lightbox="group"
+                      ><img
+                        src="images/furniturestore_banner.png"
+                        alt="家具販売会社 Finleyのバナー作品画像"
+                    /></a>
                   </div>
                   <p class="contents_text">
                     家具販売会社 Finley **On-Line Shop 2024 Summer Outlet
@@ -187,16 +227,12 @@
                   </p>
                 </div>
               </div>
-              <!--works-container-->
             </div>
           </div>
-          <!--#works-->
           <div id="contact">
             <h2 class="contact-h2">contact</h2>
             <p class="contact-text">
-              ご依頼、ご相談などのお問い合わせは下記アドレスもしくは<br />
-              LINEで受け付けております。<br />
-              お気軽にご相談ください。<br />
+              ご連絡は下記アドレスもしくはLINEまでお願い致します。<br />
               Mail:<e-mail>mia.kitamura03@gmail.com</e-mail><br />LINE:@479xknqe
             </p>
             <div class="line_qr">
@@ -206,22 +242,19 @@
             </div>
           </div>
         </div>
-        <!--main_container-->
       </div>
-      <!--wrapper-->
     </main>
     <footer class="footer">
       <div class="footer_container">
         <nav class="footer_nav">
           <ul>
             <li><a href="index.html">>home</a></li>
-            <li><a href="#">>plofile</a></li>
-            <li><a href="#">>works</a></li>
-            <li><a href="#">>contact</a></li>
+            <li><a href="#plofile-container">>plofile</a></li>
+            <li><a href="#works">>works</a></li>
+            <li><a href="#contact">>contact</a></li>
           </ul>
         </nav>
       </div>
-      <!--footer_container-->
     </footer>
   </body>
 </html>
