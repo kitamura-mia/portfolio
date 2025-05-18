@@ -620,9 +620,9 @@ h1 {
   }
 
   #contact .contact-text {
-    width: 50%;
-    margin: 0 auto 20px;
-    word-break: break-all;
+    width: 100%;
+    margin: 0 auto;
+    inline-size: fit-content;
   }
   #contact .line_qr {
     width: 150px;
