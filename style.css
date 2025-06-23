@@ -394,6 +394,14 @@ h1 {
   transform: scale(1, 1);
 }
 
+h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 #contact {
   width: 100%;
   display: flex;
@@ -415,7 +423,7 @@ h1 {
   content: "contact";
   color: rgba(255, 127, 127, 0.4);
   font-size: 80px;
-  top: 5%;
+  top: 0%;
   left: 0%;
   background-image: linear-gradient(
     45deg,
@@ -614,7 +622,7 @@ h1 {
   }
 
   #contact .contact-h2 {
-    margin: 0 auto;
+    margin: 0 auto 30px;
     justify-content: center;
     padding-bottom: 15px;
   }
@@ -772,18 +780,26 @@ h1 {
     display: block;
     margin: 0 auto;
   }
+
   .profile-img {
     margin: 0 auto;
     height: 200px;
   }
+
   .profile-section {
     margin: 0 auto;
     width: 90%;
   }
+
   .profile-section p.name {
     font-size: 24px;
   }
+
   .profile-section h2.title {
+    font-size: 20px;
+  }
+
+  h3 {
     font-size: 20px;
   }
 
@@ -895,3 +911,68 @@ h1 {
     padding: 20px;
   }
 } /**メディアクエリ500px**/
+
+
+/* スクロール無限ループのスタイル */
+:root {
+  --size-48: 48px;
+  --size-24: 24px;
+}
+
+/* スクロール領域 */
+.scroll-infinity {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* スクロールコンテナ */
+.scroll-infinity .loop_wrap {
+  display: flex;
+  width: max-content;
+  animation: loopimage  100s linear infinite;
+}
+
+/* 画像リスト全体 */
+.scroll-infinity__list {
+  display: flex;
+  gap: var(--size-48);
+  padding: 20px var(--size-48) 20px 0;
+  margin: 0;
+}
+
+/* 各リストアイテム */
+.scroll-infinity__item {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+/* 画像サイズ調整 */
+.scroll-infinity__item img {
+  width: 250px; /* 必要に応じて調整 */
+  height: auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* アニメーション定義 */
+@keyframes loopimage {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .scroll-infinity__item img {
+    width: 200px;
+  }
+  .scroll-infinity__list {
+    gap: var(--size-24);
+    padding: 20px var(--size-24) 20px 0;
+  }
+}
