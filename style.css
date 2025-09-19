@@ -411,15 +411,6 @@ h3 {
   position: relative;
 }
 
-/* .contact-h2 {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  margin-right: 20%;
-  font-weight: bold;
-  position: relative;
-} */
-
 .contact-h2 {
   position: absolute;
   content: "";
@@ -440,8 +431,8 @@ h3 {
   animation-duration: 8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  z-index: 100;
   transform: translateX(-50%);
+  font-weight: bold;
 }
 
 @keyframes gradationTextAnimation {
@@ -624,12 +615,6 @@ h3 {
     display: block;
   }
 
-  /* #contact .contact-h2 {
-    margin: 0 auto 30px;
-    justify-content: center;
-    padding-bottom: 15px;
-  } */
-
   #contact .contact-text {
     width: 100%;
     margin: 0 auto;
@@ -804,6 +789,19 @@ h3 {
 
   h3 {
     font-size: 20px;
+  }
+  .contents_box {
+    margin-bottom: 0;
+  }
+
+  .contact-h2 {
+    font-size: 70px;
+  }
+  .card {
+    margin-top: 20px;
+  }
+  #contact {
+    padding-top: 70px;
   }
 
   .footer .footer_nav ul {
