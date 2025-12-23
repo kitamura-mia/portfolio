@@ -442,6 +442,9 @@ h3 {
   background-position: right bottom;
 }
 
+.title_canva {
+  padding-top: 100px;
+}
 /* ==========================================================================
    Scroll Infinity Animation
    ========================================================================== */
@@ -684,172 +687,224 @@ h3 {
 /* ==========================================================================
    Contact Form Section
    ========================================================================== */
-#contact {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 100px 20px;
-  position: relative;
-}
-
-.contact-h2 {
-  position: absolute;
-  content: "";
-  color: rgba(255, 127, 127, 0.4);
-  font-size: 80px;
-  top: 0%;
-  left: 50%;
-  background-image: linear-gradient(45deg, #e48485 0%, #a6ddcb 50%, #eec148 90%);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation-name: gradationTextAnimation;
-  animation-duration: 8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  transform: translateX(-50%);
-  font-weight: bold;
-}
-
-.container {
-  max-width: 42rem;
-  margin: 50px auto 0;
-}
-
-.card {
-  /* background: rgba(255, 255, 255, 0.8); */
-  /* backdrop-filter: blur(8px); */
-  border-radius: 1rem;
-  /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); */
-  overflow: hidden;
-  margin-top: 50px;
-}
-
-.card-header {
-  text-align: center;
-  padding: 2rem 2rem 0;
-}
-
-.card-title {
-  font-size: 1.875rem;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 0.5rem;
-}
-
-.card-description {
-  font-size: 1.125rem;
-  color: #6b7280;
-  margin-bottom: 2rem;
-}
-
-.card-content {
-  padding: 0 2rem 2rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #374151;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-}
-
-.icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.required {
-  color: #ef4444;
-}
-
-.input, .textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.5);
-  font-size: 1rem;
-  transition: all 0.2s ease;
-}
-
-.input:focus, .textarea:focus {
-  outline: none;
-  border-color: #14b8a6;
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
-}
-
-.textarea {
-  resize: none;
-  min-height: 150px;
-  font-family: inherit;
-}
-
-.submit-btn {
-  width: 100%;
-  background: #e8cb6e;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.submit-btn:hover {
-  background: #0f766e;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  transform: translateY(-1px);
-}
-
-.submit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.success-message {
-  background: #bcdbdf;
-  color: #065f46;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  display: none;
-  margin-top: 20px;
-}
-
-.spinner {
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top: 2px solid white;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-.title_canva {
-  margin-top: 70px;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+/* =========================================
+   アニメーション定義
+   ========================================= */
+   @keyframes gradationTextAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* =========================================
+     レイアウトエリア
+     ========================================= */
+  #contact {
+    width: 100%;
+    padding: 100px 20px;
+    background-color: #f9fafb; /* 全体の背景色（カードを目立たせるため薄いグレーに） */
+    box-sizing: border-box;
+  }
+  
+  /* 左右分割のコンテナ */
+  .contact-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 上端揃え */
+    gap: 60px; /* 左テキストと右フォームの間の余白 */
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* =========================================
+     左側：テキストエリア
+     ========================================= */
+  .contact-text {
+    flex: 1; /* 幅の比率 1 */
+    position: sticky; /* スクロール追従（PCのみ有効） */
+    top: 50px;
+    left: 100px;
+    padding-top: 20px;
+  }
+  
+  .contact-h2 {
+    /* 元のデザインを継承しつつ配置を修正 */
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-align: left; /* 左寄せ */
+    
+    /* グラデーションテキスト */
+    color: rgba(255, 127, 127, 0.4);
+    background-image: linear-gradient(45deg, #e48485 0%, #a6ddcb 50%, #eec148 90%);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradationTextAnimation 8s linear infinite;
+  }
+  
+  .contact-description {
+    font-size: 1.125rem;
+    color: #6b7280;
+    line-height: 1.8;
+    margin: 0;
+  }
+  
+  /* =========================================
+     右側：フォームエリア
+     ========================================= */
+  .contact-form {
+    flex: 1.2; /* 幅の比率 1.2（少し広め） */
+    width: 100%;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
+    overflow: hidden;
+    padding: 40px 0; /* 上下の内側余白 */
+  }
+  
+  .card-content {
+    padding: 0 2.5rem;
+  }
+  
+  /* =========================================
+     フォームパーツ
+     ========================================= */
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  .label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .required {
+    color: #ef4444;
+    font-size: 0.8em;
+  }
+  
+  .input, .textarea {
+    width: 100%;
+    padding: 14px 16px; /* 少し広げて入力しやすく */
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: #f9fafb; /* 薄いグレー背景 */
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.2s ease;
+    box-sizing: border-box; /* レイアウト崩れ防止 */
+  }
+  
+  /* フォーカス時のデザイン */
+  .input:focus, .textarea:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+  }
+  
+  .textarea {
+    resize: vertical; /* 縦方向のみリサイズ許可 */
+    min-height: 160px;
+    font-family: inherit;
+  }
+  
+  /* =========================================
+     ボタン & メッセージ
+     ========================================= */
+  .submit-btn {
+    width: 100%;
+    background: #e8cb6e;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .submit-btn:hover {
+    background: #0f766e;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .spinner {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .success-message {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  /* =========================================
+     レスポンシブ対応（スマホ・タブレット）
+     ========================================= */
+  @media (max-width: 900px) {
+    .contact-layout {
+      flex-direction: column; /* 縦並びに変更 */
+      gap: 40px;
+      max-width: 600px; /* スマホで見やすい幅に */
+    }
+  
+    .contact-text {
+      text-align: center;
+      position: static; /* 追従を解除 */
+      width: 100%;
+    }
+  
+    .contact-h2 {
+      text-align: center;
+      font-size: 48px; /* スマホ用に少し小さく */
+      margin-bottom: 16px;
+    }
+  
+    .card-content {
+      padding: 0 1.5rem;
+    }
+  }
 
 /* ==========================================================================
    Footer
@@ -1102,7 +1157,7 @@ h3 {
   h3 { font-size: 20px; }
   .contact-h2 { font-size: 70px; top:3%;}
   .card { margin-top: 20px; }
-  #contact { padding: 70px 0; }
+  #contact { padding: 0 0 70px; }
   .footer .footer_nav ul { width: 60%; flex-wrap: wrap; }
   .btn_menu { display: block; width: 40px; height: 40px; position: fixed; top: 20px; right: 10px; z-index: 1000; }
   .btn_menu span { width: 60%; height: 2px; display: block; background-color: #000; position: absolute; left: 20%; transition: all 0.2s linear; }
@@ -1196,53 +1251,43 @@ h3 {
 .lb-nav {
   height: 100% !important;
 }
-/* ==========================================================================
-   Partner Section
-   ========================================================================== */
 
-/* 背景エリア（Hobbyセクションなどと統一感を持たせる） */
+/* --- Partner Section --- */
 .partner-wrapper {
   width: 100%;
-  padding: 60px 0;
+  padding: 60px 0 100px;
 }
 
-/* セクションタイトル */
 .partner-heading {
   font-size: 24px;
   text-align: center;
   font-weight: 700;
   margin-bottom: 40px;
   color: #333;
-  /* 既存の装飾に合わせる */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
 }
 
-/* タイトル左右の装飾ライン */
 .partner-heading::before,
 .partner-heading::after {
   content: '';
   display: block;
   width: 30px;
   height: 3px;
-  background-color: var(--c-mint); /* ミントグリーン */
+  background-color: var(--c-mint);
   border-radius: 2px;
 }
 
-/* カードデザイン */
 .partner-card {
   max-width: 800px;
   margin: 0 auto;
   background: #ffffff;
   border-radius: 30px;
   padding: 50px;
-  
-  /* 柔らかい影と薄い枠線で浮遊感を出す */
   box-shadow: 0 15px 40px rgba(166, 221, 203, 0.15);
   border: 1px solid rgba(166, 221, 203, 0.3);
-  
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1253,7 +1298,6 @@ h3 {
   transform: translateY(-3px);
 }
 
-/* エンジニア名・屋号 */
 .partner-name {
   font-size: 2rem;
   font-weight: 700;
@@ -1263,7 +1307,15 @@ h3 {
   z-index: 1;
 }
 
-/* 説明文 */
+.partner-header {
+  gap: 10px;
+}
+
+.partner-logo {
+  width: 55px;
+  height: 55px;
+}
+
 .partner-desc {
   font-size: 1rem;
   line-height: 2;
@@ -1273,40 +1325,9 @@ h3 {
   z-index: 1;
 }
 
-/* ボタン配置エリア */
-.partner-link-area {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-}
-
-/* ============================================
-   Responsive (スマホ対応)
-   ============================================ */
-@media screen and (max-width: 600px) {
-  .partner-card {
-    padding: 40px 25px;
-    width: 90%; /* 画面幅いっぱいにしすぎない */
-    margin: 0 auto;
-  }
-
-  .partner-desc {
-    font-size: 0.95rem;
-    text-align: justify; /* スマホでは両端揃えor左揃えが見やすい */
-    text-align-last: left;
-  }
-
-  /* ボタンを押しやすく広げる */
-  .partner-link-area .btn-link {
-    width: 100%;
-    max-width: 300px;
-  }
-}
 .partner-features {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap; 
   gap: 12px;
   margin-bottom: 35px;
   padding: 0;
@@ -1336,36 +1357,58 @@ h3 {
   font-weight: bold;
 }
 
-.partner-logo {
-  width: 55px;
-  height: 55px;
+.partner-link-area {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
+@media screen and (max-width: 850px) {
+  .partner-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 全体は中央寄せ */
+    gap: 8px; 
+    max-width: 600px;
+    margin: 0 auto 35px;
+  }
+
+  .partner-features li {
+    flex: 1 1 calc(45%);   /* 45%をベースにしつつ、伸び縮みを許可 */
+    white-space: normal;   /* 文字の折り返しを許可する（見切れ防止の重要設定） */
+    word-break: break-all; /* 単語の途中でも改行させる */
+    min-width: 140px;      /* これ以上小さくなると1列に落ちる */
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    display: flex;
+    align-items: flex-start; /* チェックアイコンと複数行テキストを綺麗に並べる */
+  }
+}
+
+/* --- Responsive (スマホ対応) --- */
 @media screen and (max-width: 600px) {
+  .partner-card {
+    padding: 40px 25px;
+    width: 90%;
+  }
+
+  .partner-desc {
+    font-size: 0.95rem;
+    text-align: justify;
+    text-align-last: left;
+  }
+
+  .partner-link-area .btn-link {
+    width: 100%;
+    max-width: 300px;
+  }
+
   .partner-logo {
     width: 50px;
     height: 50px;
   }
-}
 
-/* --- スマホ対応（縦並び・折り返し許可） --- */
-@media screen and (max-width: 850px) {
-  .partner-features {
-    flex-wrap: wrap; 
-  }
-    
-  .partner-features {
-    flex-direction: column;
-    align-items: left;
-    object-fit: contain;
-  }
-}
-
-.partner-header {
-  gap: 10px;
-}
-
-@media screen and (max-width: 600px) {
   .partner-header {
     gap: 6px;
   }
